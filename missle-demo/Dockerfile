@@ -1,9 +1,6 @@
 FROM ubuntu:bionic
 
-RUN yum update -y && \
-    yum install -y python3 python3-pip && \
-    python3 -m pip install pyfiglet termcolor
+RUN apt-get update && \
+    apt-get install -y fortune fortunes-min
 
-ADD missile.py /
-
-CMD ["/usr/games/fortune", "missile.py"]
+CMD ["/usr/games/fortune"]
